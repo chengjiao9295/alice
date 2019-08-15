@@ -2,18 +2,54 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
 
+    <!--基本信息-->
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 项目信息 -->
     <groupId>alice</groupId>
     <artifactId>alice</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <!-- 声明多个子模块,叫做"聚合"，多个模块联合编译-->
     <modules>
         <module>controller</module>
         <module>service</module>
         <module>data</module>
         <module>web</module>
+        <module>common</module>
+        <module>serviceImpl</module>
+        <module>config</module>
+        <module>test</module>
     </modules>
 
+    <!--编码格式-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <mybatis.version>1.3.2</mybatis.version>
+        <log4j.version>2.1</log4j.version>
+        <spring.version>4.3.18.RELEASE</spring.version>
+    </properties>
+
+    <!--版本说明，统一管理版本号-->
+    <dependencyManagement>
+        <dependencies>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <!--SCM(Source Control Management)标签允许你配置你的代码库，供Maven web站点和其它插件使用。-->
+    <scm>
+        <!--给开发者使用的，类似connection元素。即该连接不仅仅只读-->
+        <developerConnection>scm:git:https://github.com/chengjiao9295/alice.git</developerConnection>
+        <!--SCM的URL,该URL描述了版本库和如何连接到版本库。欲知详情，请看SCMs提供的URL格式和列表。该连接只读。-->
+        <connection>scm:git:https://github.com/chengjiao9295/alice.git</connection>
+        <!--当前代码的标签，在开发阶段默认为HEAD-->
+        <tag>HEAD</tag>
+    </scm>
 
 </project>
