@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用户登录</title>
+  <style type="text/css">
+    .user_login{
+        width: 210px;
+        padding: 1px;
+        border: 1px solid #dbdbd0;
+        background: #ffffff;
+    }
+    .user_login *{
+        margin: 0;
+        padding: 0;
+        font: normal 12px/1.5em "宋体", Verdana, Lucida, Arial;
+    }
+    .user_login h3{
+            height: 24px;
+            line-height: 24px;
+            font-weight: bold;
+            text-align: center;
+            background: #eeeee8;
+    }
+    .user_login .content{
+        padding: 5px;
+    }
+    .user_login .frm_cont{
+        margin-bottom: 5px;
+    }
+    .user_login .frm_cont label{
+        cursor: pointer;
+    }
+    .user_login .username input, .user_login .pwd input, .user_login .validate input{
+        width: 146px;
+        height: 17px;
+        padding: 3px 6px 0;
+        border: 1px solid #a9a98d;
+    }
+    .user_login .validate input{
+        width: 36px;
+        text-align: center;
+        margin-right: 5px;
+    }
+    .user_login .keeplogin{
+        padding-left: 48px;
+    }
+    .user_login .keeplogin input{
+        margin-right: 5px;
+        vertical-align: -1px;
+    }
+    .user_login .btns{
+        text-align: center;
+    }
+    .user_login .btns a{
+        padding: 3px 4px 2px;
+        text-decoration: none;
+        color: #000000;
+    }
+    .user_login .btns button{
+        height: 21px;
+        cursor: pointer;
+    }
+    .user_login .btns button, .user_login .btns a{
+        border: 1px solid #a9a98d;
+    }
+  </style>
+</head>
+<body>
+    <div class="user_login">
+        <h3>用户登录</h3>
+        <div class="content">
+            <form method="post" action="">
+                <div class="frm_cont username">
+                    <label for="username">用户名：</label>
+                    <input type="text" id="username"/>
+                </div>
+                <div class="frm_cont pwd">
+                    <label for="pwd">密码：</label>
+                    <input type="text" id="pwd"/>
+                </div>
+                <div class="frm_cont validate">
+                    <label for="validate">验证码：</label>
+                    <input type="text" id="validate"/>
+
+                </div>
+                <div class="frm_cont keeplogin">
+                    <input type="checkbox" id="keeplogin"/>
+                    <label for="keeplogin">记住我的登录信息</label>
+                </div>
+                <div class="btns">
+                    <button type="submit" class="btn_login">登录</button>
+                    <a href="#" class="reg">用户注册</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>

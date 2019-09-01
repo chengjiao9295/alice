@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>定位显示</title>
+
+  <style type="text/css">
+    #contain1, #contain2, #contain3{
+        width: 380px;
+        height: 120px;
+        border: solid 1px #666;
+    }
+    #contain2{
+        position: absolute;
+        left: 120px;
+        top: 60px;
+        background: #f08080;
+    }
+    #contain2 div{
+        color: #993399;
+        border: solid 1px #ff0000;
+    }
+
+  </style>
+</head>
+<div id="contain1">元素1流动</div>
+<div id="contain2">元素2绝对定位
+    <div id="sub_div1">子元素1绝对定位</div>
+    <div id="sub_div2">子元素2浮动</div>
+    <div id="sub_div3">子元素3流动</div>
+</div>
+<div id="contain3">元素3浮动</div>
+</html>

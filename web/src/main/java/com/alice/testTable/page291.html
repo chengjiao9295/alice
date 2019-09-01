@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>结构化表格</title>
+  <style>
+    table{
+        border: #eeeeee 1px solid;
+        border-collapse: collapse;
+        width: 100%;
+
+    }
+
+    th{
+        font-weight: bold;
+        padding-left: 15px;
+        text-align: left;
+    }
+
+    th,td{
+        padding: .3em .5em;
+    }
+
+    thead th{
+        background: #c6ceda;
+        border-color: #fff #fff #888 #fff;
+        border-style: solid;
+        border-width: 1px 1px 2px 1px;
+        padding-left: .5em;
+    }
+
+    tbody th.start{
+        background: lightgreen;
+        padding-left: 26px;
+    }
+
+    tbody th.end{
+        background: antiquewhite;
+        padding-left: 26px;
+    }
+    .arrows{
+        background: #eee;
+        padding-left: 28px;
+        font-weight: bold;
+        color: #888888;
+    }
+    tr:hover, td.start:hover, td.end:hover{
+        background: darkslategrey;
+    }
+  </style>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>排名</th>
+            <th>校名</th>
+            <th>总分</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="arrows" colspan="5">一类</td>
+        </tr>
+        <tr>
+            <th class="start">1</th>
+            <td class="start">清华</td>
+            <td class="start">724</td>
+        </tr>
+        <tr>
+            <th class="end">2</th>
+            <td class="end">北大</td>
+            <td class="end">700</td>
+        </tr>
+         <tr>
+            <td class="arrows" colspan="5">二类</td>
+        </tr>
+        <tr>
+            <th class="start">3</th>
+            <td class="start">上交</td>
+            <td class="start">690</td>
+        </tr>
+        <tr>
+            <th class="end">4</th>
+            <td class="end">复旦</td>
+            <td class="end">689</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
