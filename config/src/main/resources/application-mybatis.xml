@@ -29,6 +29,7 @@
         <property name="mapperLocations">
             <list>
                 <!-- 表示在com.alice.mapper包或以下所有目录中，以-resultmap.xml结尾所有文件 -->
+<!--                <value>classpath*:com/alice/mapper/*.xml</value>-->
                 <value>classpath*:com/alice/mapper/*.xml</value>
             </list>
         </property>

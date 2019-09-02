@@ -63,6 +63,10 @@
             <artifactId>spring-core</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <!-- Web application development utilities applicable to both Servlet and
+          Portlet Environments (depends on spring-core, spring-beans, spring-context)
+          Define this if you use Spring MVC, or wish to use Struts, JSF, or another
+          web framework with Spring (org.springframework.web.*) -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
@@ -91,6 +95,21 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- Spring MVC for Servlet Environments (depends on spring-core, spring-beans,
+       spring-context, spring-web) Define this if you use Spring MVC with a Servlet
+       Container such as Apache Tomcat (org.springframework.web.servlet.*) -->
+        <!-- 视图解析器必须的jar包 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!--与事务管理器配置必须的jar包-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <!--Mybatis-->
@@ -124,10 +143,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.39</version>
         </dependency>
+        <!--数据库连接池-->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>${spring.version}</version>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
         </dependency>
     </dependencies>
 

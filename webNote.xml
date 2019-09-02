@@ -3,178 +3,178 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <!--    xml文件区分大小写，这里必须是web-app，全部小写-->
+<!--    &lt;!&ndash;    xml文件区分大小写，这里必须是web-app，全部小写&ndash;&gt;-->
 
-    <!--    XML 元素不仅是大小写敏感的，而且它们还对出现在其他元素中的次序敏感。比如servlet元素必须出现在所有servlet-mapping元素之前-->
+<!--    &lt;!&ndash;    XML 元素不仅是大小写敏感的，而且它们还对出现在其他元素中的次序敏感。比如servlet元素必须出现在所有servlet-mapping元素之前&ndash;&gt;-->
 
-    <!--    指定欢迎页，welcome-file-list元素指示服务器在收到引用一个目录名而不是文件名的URL时，使用哪个文件。-->
-    <!--    假如用户提供了一个像http: //host/webAppPrefix/directoryName/ 这样的包含一个目录名但没有包含文件名的URL，会发生什么事情呢？用户能得到一个目录表？一个错误？还是标准文件的内容？如果得到标准文件内容，是 index.html、index.jsp、default.html、default.htm或别的什么东西呢？-->
-    <!--    Welcome-file-list 元素及其辅助的welcome-file元素解决了这个模糊的问题。例如，下面的web.xml项指出，如果一个URL给出一个目录名但未给出文件名，服务器应该首先试用index.jsp，然后再试用index.html。如果两者都没有找到，则结果有赖于所用的服务器（如一个目录列表）。-->
-    <!--    虽然许多服务器缺省遵循这种行为，但不一定必须这样。因此，明确地使用welcome-file-list保证可移植性是一种良好的习惯。-->
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-        <welcome-file>index.html</welcome-file>-->
-    </welcome-file-list>
-
-
-    <!--    context-param context-param元素声明应用范围内的初始化参数,它包含param-name、param-value以及可选的description子元素。 -->
-    <!--    为了保证可移植性，web.xml内的元素必须以正确的次序声明。但这里应该注意，context-param元素必须出现在任意与-->
-    <!--    文档有关的元素（icon、display-name或description）之后及filter、filter-mapping、listener或 servlet元素之前。-->
-    <!--    当applicationContext.xml不在web-info目录下时，需要配置，否则可以省略-->
-    <!--    还有一种省略情况是，如果直接采用SpringMVC，只需要把所有相关配置放到spring-mvc.xml中就好，一般spring mvc项目用不到多个serverlet-->
-    <!--    所以像本人工作中使用得配置文件都没有配application.xml文件，只有web.xml和spring-*相关得配置文件-->
-
-    <!--    虽然如此，但是这里还是作相关介绍 -->
-    <!--    applicationContext.xml是全局得，应用于多个serverlet，需要配合listener一起使用-->
-    <!--    application-context.xml这个一般是采用非spring mvc架构，用来加载Application Context。-->
+<!--    &lt;!&ndash;    指定欢迎页，welcome-file-list元素指示服务器在收到引用一个目录名而不是文件名的URL时，使用哪个文件。&ndash;&gt;-->
+<!--    &lt;!&ndash;    假如用户提供了一个像http: //host/webAppPrefix/directoryName/ 这样的包含一个目录名但没有包含文件名的URL，会发生什么事情呢？用户能得到一个目录表？一个错误？还是标准文件的内容？如果得到标准文件内容，是 index.html、index.jsp、default.html、default.htm或别的什么东西呢？&ndash;&gt;-->
+<!--    &lt;!&ndash;    Welcome-file-list 元素及其辅助的welcome-file元素解决了这个模糊的问题。例如，下面的web.xml项指出，如果一个URL给出一个目录名但未给出文件名，服务器应该首先试用index.jsp，然后再试用index.html。如果两者都没有找到，则结果有赖于所用的服务器（如一个目录列表）。&ndash;&gt;-->
+<!--    &lt;!&ndash;    虽然许多服务器缺省遵循这种行为，但不一定必须这样。因此，明确地使用welcome-file-list保证可移植性是一种良好的习惯。&ndash;&gt;-->
+<!--    <welcome-file-list>-->
+<!--        <welcome-file>index.jsp</welcome-file>-->
+<!--        <welcome-file>index.html</welcome-file>&ndash;&gt;-->
+<!--    </welcome-file-list>-->
 
 
- <!--模块1： web.xml中的contextConfigLocation在spring中的作用，可具体参考https://www.cnblogs.com/javahr/p/8408857.html-->
+<!--    &lt;!&ndash;    context-param context-param元素声明应用范围内的初始化参数,它包含param-name、param-value以及可选的description子元素。 &ndash;&gt;-->
+<!--    &lt;!&ndash;    为了保证可移植性，web.xml内的元素必须以正确的次序声明。但这里应该注意，context-param元素必须出现在任意与&ndash;&gt;-->
+<!--    &lt;!&ndash;    文档有关的元素（icon、display-name或description）之后及filter、filter-mapping、listener或 servlet元素之前。&ndash;&gt;-->
+<!--    &lt;!&ndash;    当applicationContext.xml不在web-info目录下时，需要配置，否则可以省略&ndash;&gt;-->
+<!--    &lt;!&ndash;    还有一种省略情况是，如果直接采用SpringMVC，只需要把所有相关配置放到spring-mvc.xml中就好，一般spring mvc项目用不到多个serverlet&ndash;&gt;-->
+<!--    &lt;!&ndash;    所以像本人工作中使用得配置文件都没有配application.xml文件，只有web.xml和spring-*相关得配置文件&ndash;&gt;-->
 
-    <!--（1）-->
-        <context-param>
-            <param-name>contextConfigLocation</param-name><!--contextConfigLocation名字固定 -->
-            <param-value>classpath:config/applicationContext.xml</param-value>
-        </context-param>
+<!--    &lt;!&ndash;    虽然如此，但是这里还是作相关介绍 &ndash;&gt;-->
+<!--    &lt;!&ndash;    applicationContext.xml是全局得，应用于多个serverlet，需要配合listener一起使用&ndash;&gt;-->
+<!--    &lt;!&ndash;    application-context.xml这个一般是采用非spring mvc架构，用来加载Application Context。&ndash;&gt;-->
 
-    <!-- (2) -->
-        <context-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>
-                classpath*:config/applicationContext_core*.xml,
-                classpath*:config/applicationContext_dict*.xml,
-                classpath*:config/applicationContext_hibernate.xml,
-            </param-value>
-        </context-param>
-    <!--   上述（1），（2）定义了contextConfigLocation参数，这个参数名字固定，不得更改，一个是只有一个配置文件，另一个是以逗号分隔多个配置文件，
-    spring会使用这个参数去加载所有逗号分隔得xml文件，如果没有这个参数，spring默认加载web-inf/applicationContext.xml文件，
-    <param-value>定义了要装入的 Spring 配置文件，这里可以重新定义非web-inf得路径。-->
 
-    <!--    classpath是什么，以及classpath:和classpath*有何区别：参考https://www.cnblogs.com/UUUz/p/8722553.html-->
-    <!--    1. 首先 classpath是指 WEB-INF文件夹下的classes目录
-            2. classpath 和 classpath* 区别：
-            classpath：只会到你的class路径中查找找文件;
-            classpath*：不仅包含class路径，还包括jar文件中(class路径)进行查找.
+<!-- &lt;!&ndash;模块1： web.xml中的contextConfigLocation在spring中的作用，可具体参考https://www.cnblogs.com/javahr/p/8408857.html&ndash;&gt;-->
 
-            如果applicationContext.xml配置文件存放在src目录下，就好比上面的代码结构中的存放位置，那么在web.xml中的配置就如下所示：
-            <param-value>classpath:applicationContext.xml</param-value>
-            如果applicationContext.xml配置文件存放在WEB-INF下面，那么在web.xml中的配置就如下所示：
-            <param-value>WEB-INF/applicationContext*.xml</param-value>
-            需要注意的是，部署到应用服务器后，src目录下的配置文件会和class文件一样，自动copy到应用的 classes目录下，spring的
-             配置文件在启动时，加载的是web-info目录下的applicationContext.xml, 运行时使用的是web-info/classes目录下的applicationContext.xml。-->
+<!--    &lt;!&ndash;（1）&ndash;&gt;-->
+<!--        <context-param>-->
+<!--            <param-name>contextConfigLocation</param-name>&lt;!&ndash;contextConfigLocation名字固定 &ndash;&gt;-->
+<!--            <param-value>classpath:config/applicationContext.xml</param-value>-->
+<!--        </context-param>-->
 
-    <!--    Spring 提供ServletContextListener 的一个实现类ContextLoaderListener ，该类可以作为listener 使用，它会在创建时自动查找WEB-INF/下-->
-    <!--    的applicationContext.xml 文件。因此，如果只有一个配置文件，并且文件名为applicationContext.xml ，则只需在web.xml文件中增加如下-->
-    <!--    监听器代码即可,不要上面得（1）或（2）配置，如果配置文件名不是application.xml或者路径不在web-inf/applicationContext.xml，又或者
-            存在多个配置文件，则需要使用上述得<context-param>配置，由于ContextLoaderListener加载时，会查找名为contextConfigLocation的参数。
-            因此，配置<context-param>时参数名字应该是contextConfigLocation。-->
+<!--    &lt;!&ndash; (2) &ndash;&gt;-->
+<!--        <context-param>-->
+<!--            <param-name>contextConfigLocation</param-name>-->
+<!--            <param-value>-->
+<!--                classpath*:config/applicationContext_core*.xml,-->
+<!--                classpath*:config/applicationContext_dict*.xml,-->
+<!--                classpath*:config/applicationContext_hibernate.xml,-->
+<!--            </param-value>-->
+<!--        </context-param>-->
+<!--    &lt;!&ndash;   上述（1），（2）定义了contextConfigLocation参数，这个参数名字固定，不得更改，一个是只有一个配置文件，另一个是以逗号分隔多个配置文件，-->
+<!--    spring会使用这个参数去加载所有逗号分隔得xml文件，如果没有这个参数，spring默认加载web-inf/applicationContext.xml文件，-->
+<!--    <param-value>定义了要装入的 Spring 配置文件，这里可以重新定义非web-inf得路径。&ndash;&gt;-->
 
-    <!--    监听器,采用listener创建ApplicationContext 实例-->
-        <listener>
-            <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-        </listener>
+<!--    &lt;!&ndash;    classpath是什么，以及classpath:和classpath*有何区别：参考https://www.cnblogs.com/UUUz/p/8722553.html&ndash;&gt;-->
+<!--    &lt;!&ndash;    1. 首先 classpath是指 WEB-INF文件夹下的classes目录-->
+<!--            2. classpath 和 classpath* 区别：-->
+<!--            classpath：只会到你的class路径中查找找文件;-->
+<!--            classpath*：不仅包含class路径，还包括jar文件中(class路径)进行查找.-->
 
-    <!--重点说明-->
-    <!--    如果没有contextConfigLocation 指定配置文件，则Spring 自动查找applicationContext.xml 配置文件。如果有contextConfigLocation，-->
-    <!--    则利用该参数确定的配置文件。该参数指定的一个字符串，Spring 的ContextLoaderListener 负责将该字符串分解成多个配置文件，-->
-    <!--    逗号"，"、空格" "及分号";"都可作为字符串的分割符。如果既没有applicationContext.xml 文件，也没有使用contextConfigLocation参数确定配置文件，-->
-    <!--    或者contextConfigLocation确定的配置文件不存在。都将导致Spring 无法加载配置文件或无法正常创建ApplicationContext 实例-->
+<!--            如果applicationContext.xml配置文件存放在src目录下，就好比上面的代码结构中的存放位置，那么在web.xml中的配置就如下所示：-->
+<!--            <param-value>classpath:applicationContext.xml</param-value>-->
+<!--            如果applicationContext.xml配置文件存放在WEB-INF下面，那么在web.xml中的配置就如下所示：-->
+<!--            <param-value>WEB-INF/applicationContext*.xml</param-value>-->
+<!--            需要注意的是，部署到应用服务器后，src目录下的配置文件会和class文件一样，自动copy到应用的 classes目录下，spring的-->
+<!--             配置文件在启动时，加载的是web-info目录下的applicationContext.xml, 运行时使用的是web-info/classes目录下的applicationContext.xml。&ndash;&gt;-->
 
-    <!--    上述得<Listener>可以使用下述方式实现load-on-startup Servlet 也是可以得,这两个配置二选一即可-->
-    <!--    Spring 提供了一个特殊的Servlet 类: ContextLoaderServlet。该Servlet 在启动时，会自动查找WEB-IN日下的applicationContext. xml 文件。-->
-    <!--    当然，为了让ContextLoaderServlet 随应用启动而启动，应将此Servlet 配置成load-on-startup 的Servlet load-on-startup 的值小一点比较合适，-->
-    <!--    因为要保证ApplicationContext 优先创建。:-->
-            <servlet-name>
-                <servlet-name>context</servlet-name>
-                　　<servlet-class>org.springframework.web.context.ContextLoaderServlet</servlet-class>
-                <load-on-startup>l</load-on-startup>
-            </servlet-name>
+<!--    &lt;!&ndash;    Spring 提供ServletContextListener 的一个实现类ContextLoaderListener ，该类可以作为listener 使用，它会在创建时自动查找WEB-INF/下&ndash;&gt;-->
+<!--    &lt;!&ndash;    的applicationContext.xml 文件。因此，如果只有一个配置文件，并且文件名为applicationContext.xml ，则只需在web.xml文件中增加如下&ndash;&gt;-->
+<!--    &lt;!&ndash;    监听器代码即可,不要上面得（1）或（2）配置，如果配置文件名不是application.xml或者路径不在web-inf/applicationContext.xml，又或者-->
+<!--            存在多个配置文件，则需要使用上述得<context-param>配置，由于ContextLoaderListener加载时，会查找名为contextConfigLocation的参数。-->
+<!--            因此，配置<context-param>时参数名字应该是contextConfigLocation。&ndash;&gt;-->
 
-<!--模块2 dispatcherServlet详解 ，可参考具体链接https://blog.csdn.net/jinnianshilongnian/article/details/84254470-->
-    <!-- 配置spring mvc -->
-    <!-- servlet具体运行原理可参照https://blog.csdn.net/lyly4413/article/details/86699700-->
-    <!-- 命名指定servlet来处理对应URL的请求，SpringMVC中配置DispatcherServlet  -->
-            <servlet>
-                <!-- 别名-->
-                <servlet-name>dispatcher</servlet-name>
-                <!-- 指定servlet类 -->
-                <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-                <!-- 如果dispatcher-servlet.xml放在web-inf文件夹下则不用配置,否则需要使用init-param进行初始化参数配置，
-                其中，contextConfigLocation参数名不能改 -->
-                <init-param>
-                    <param-name>contextConfigLocation</param-name>
-                    <param-value>classpath:web-inf/context.xml</param-value>
-                </init-param>
-            </servlet>
-           <!-- 配置对应servlet 拦截url与应用中contrller的url的映射规则 -->
-            <servlet-mapping>
-                <servlet-name>dispatcher</servlet-name>
-                <url-pattern>/</url-pattern>
-            </servlet-mapping>
-    <!--    先了解两个一个URL的组成：例如：http://localhost:8080/appDemo/user/users.html-->
-    <!--    该地址中包含通信协议http+服务器地址localhost+服务器端口+contextPath+servletPath;这里主要说一下contextPath和servletPath,-->
-    <!--    contextPath一般就是你配置的应用名，servletPath则就是tomcat根据请求URL匹配规则处理之后映射的地址，一般会截取contextPath之后-->
-    <!--    的字符串与你在<url-pattern>定义的匹配规则做验证，验证通过则用那段字符串去做servlet的地址映射，映射到对应的servlet去处理请求；-->
-    <!--    <url-pattern>匹配规则：-->
-    <!--    精确匹配：在<url-pattern>中配置的项必须与url完全精确匹配-->
-    <!--    <servlet-mapping>-->
-    <!--        <servlet-name>MyServlet</servlet-name>-->
-    <!--        <url-pattern>/index.html</url-pattern>-->
-    <!--    </servlet-mapping>-->
-    <!--    则在浏览器中输入http://localhost:8080/appDemo/index.html才会被匹配到该servlet;另外精确匹配在url后面加查询条件也可以被匹配：http://localhost:8080/appDemo/index.html?username=Tom&age=23也是可以的-->
+<!--    &lt;!&ndash;    监听器,采用listener创建ApplicationContext 实例&ndash;&gt;-->
+<!--        <listener>-->
+<!--            <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+<!--        </listener>-->
 
-    <!--    路径匹配：以“/”字符开头，并以“/*”结尾的字符串用于路径匹配-->
-    <!--    <servlet-mapping>-->
-    <!--        <servlet-name>MyServlet</servlet-name>-->
-    <!--        <url-pattern>/user/*</url-pattern>-->
-    <!--    </servlet-mapping>-->
-    <!--    路径以/user/开始，后面的路径可以任意。比如下面的url都会被匹配。例如：http://localhost:8080/appDemo/user/users.html；-->
-    <!--    http://localhost:8080/appDemo/user/addUser.action；http://localhost:8080/appDemo/user/updateUser.actionl-->
+<!--    &lt;!&ndash;重点说明&ndash;&gt;-->
+<!--    &lt;!&ndash;    如果没有contextConfigLocation 指定配置文件，则Spring 自动查找applicationContext.xml 配置文件。如果有contextConfigLocation，&ndash;&gt;-->
+<!--    &lt;!&ndash;    则利用该参数确定的配置文件。该参数指定的一个字符串，Spring 的ContextLoaderListener 负责将该字符串分解成多个配置文件，&ndash;&gt;-->
+<!--    &lt;!&ndash;    逗号"，"、空格" "及分号";"都可作为字符串的分割符。如果既没有applicationContext.xml 文件，也没有使用contextConfigLocation参数确定配置文件，&ndash;&gt;-->
+<!--    &lt;!&ndash;    或者contextConfigLocation确定的配置文件不存在。都将导致Spring 无法加载配置文件或无法正常创建ApplicationContext 实例&ndash;&gt;-->
 
-    <!--     扩展名匹配：以“*.”开头的字符串被用于扩展名匹配-->
-    <!--    <servlet-mapping>-->
-    <!--        <servlet-name>MyServlet</servlet-name>-->
-    <!--        <url-pattern>*.jsp</url-pattern>-->
-    <!--        <url-pattern>*.action</url-pattern>-->
-    <!--    </servlet-mapping>-->
-    <!--    则任何扩展名为jsp或action的url请求都会匹配，比如下面的url都会被匹配-->
-    <!--    　　http://localhost:8080/appDemo/user/users.jsp-->
-    <!--    　　http://localhost:8080/appDemo/toHome.action-->
+<!--    &lt;!&ndash;    上述得<Listener>可以使用下述方式实现load-on-startup Servlet 也是可以得,这两个配置二选一即可&ndash;&gt;-->
+<!--    &lt;!&ndash;    Spring 提供了一个特殊的Servlet 类: ContextLoaderServlet。该Servlet 在启动时，会自动查找WEB-IN日下的applicationContext. xml 文件。&ndash;&gt;-->
+<!--    &lt;!&ndash;    当然，为了让ContextLoaderServlet 随应用启动而启动，应将此Servlet 配置成load-on-startup 的Servlet load-on-startup 的值小一点比较合适，&ndash;&gt;-->
+<!--    &lt;!&ndash;    因为要保证ApplicationContext 优先创建。:&ndash;&gt;-->
+<!--            <servlet-name>-->
+<!--                <servlet-name>context</servlet-name>-->
+<!--                　　<servlet-class>org.springframework.web.context.ContextLoaderServlet</servlet-class>-->
+<!--                <load-on-startup>l</load-on-startup>-->
+<!--            </servlet-name>-->
 
-    <!--     缺省匹配-->
-    <!--    <servlet-mapping>-->
-    <!--        <servlet-name>MyServlet</servlet-name>-->
-    <!--        <url-pattern>/</url-pattern>-->
-    <!--    </servlet-mapping>-->
-    <!--    则所有请求都可以匹配-->
+<!--&lt;!&ndash;模块2 dispatcherServlet详解 ，可参考具体链接https://blog.csdn.net/jinnianshilongnian/article/details/84254470&ndash;&gt;-->
+<!--    &lt;!&ndash; 配置spring mvc &ndash;&gt;-->
+<!--    &lt;!&ndash; servlet具体运行原理可参照https://blog.csdn.net/lyly4413/article/details/86699700&ndash;&gt;-->
+<!--    &lt;!&ndash; 命名指定servlet来处理对应URL的请求，SpringMVC中配置DispatcherServlet  &ndash;&gt;-->
+<!--            <servlet>-->
+<!--                &lt;!&ndash; 别名&ndash;&gt;-->
+<!--                <servlet-name>dispatcher</servlet-name>-->
+<!--                &lt;!&ndash; 指定servlet类 &ndash;&gt;-->
+<!--                <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
+<!--                &lt;!&ndash; 如果dispatcher-servlet.xml放在web-inf文件夹下则不用配置,否则需要使用init-param进行初始化参数配置，-->
+<!--                其中，contextConfigLocation参数名不能改 &ndash;&gt;-->
+<!--                <init-param>-->
+<!--                    <param-name>contextConfigLocation</param-name>-->
+<!--                    <param-value>classpath:web-inf/context.xml</param-value>-->
+<!--                </init-param>-->
+<!--            </servlet>-->
+<!--           &lt;!&ndash; 配置对应servlet 拦截url与应用中contrller的url的映射规则 &ndash;&gt;-->
+<!--            <servlet-mapping>-->
+<!--                <servlet-name>dispatcher</servlet-name>-->
+<!--                <url-pattern>/</url-pattern>-->
+<!--            </servlet-mapping>-->
+<!--    &lt;!&ndash;    先了解两个一个URL的组成：例如：http://localhost:8080/appDemo/user/users.html&ndash;&gt;-->
+<!--    &lt;!&ndash;    该地址中包含通信协议http+服务器地址localhost+服务器端口+contextPath+servletPath;这里主要说一下contextPath和servletPath,&ndash;&gt;-->
+<!--    &lt;!&ndash;    contextPath一般就是你配置的应用名，servletPath则就是tomcat根据请求URL匹配规则处理之后映射的地址，一般会截取contextPath之后&ndash;&gt;-->
+<!--    &lt;!&ndash;    的字符串与你在<url-pattern>定义的匹配规则做验证，验证通过则用那段字符串去做servlet的地址映射，映射到对应的servlet去处理请求；&ndash;&gt;-->
+<!--    &lt;!&ndash;    <url-pattern>匹配规则：&ndash;&gt;-->
+<!--    &lt;!&ndash;    精确匹配：在<url-pattern>中配置的项必须与url完全精确匹配&ndash;&gt;-->
+<!--    &lt;!&ndash;    <servlet-mapping>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <servlet-name>MyServlet</servlet-name>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <url-pattern>/index.html</url-pattern>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </servlet-mapping>&ndash;&gt;-->
+<!--    &lt;!&ndash;    则在浏览器中输入http://localhost:8080/appDemo/index.html才会被匹配到该servlet;另外精确匹配在url后面加查询条件也可以被匹配：http://localhost:8080/appDemo/index.html?username=Tom&age=23也是可以的&ndash;&gt;-->
 
-    <!--    使用时需要注意的是：-->
-    <!--    路径匹配和扩展名匹配无法同时设置，　如<url-pattern>/user/*.action</url-pattern>是非法的，
-    另外注意：<url-pattern>/aa/*/bb</url-pattern>是精确匹配，合法，这里的*不是通配的含义-->
-    <!--    "/*"和"/"含义并不相同；“/*”属于路径匹配，并且可以匹配所有request，由于路径匹配的优先级仅次于精确匹配，
-    所以“/*”会覆盖所有的扩展名匹配，很多404错误均由此引起，所以这是一种特别恶劣的匹配模式，一般只用于filter的url-pattern；
-    “/”是servlet中特殊的匹配模式，切该模式有且仅有一个实例，优先级最低，不会覆盖其他任何url-pattern，只是会替换servlet容器
-    的内建default servlet ，该模式同样会匹配所有request。-->
+<!--    &lt;!&ndash;    路径匹配：以“/”字符开头，并以“/*”结尾的字符串用于路径匹配&ndash;&gt;-->
+<!--    &lt;!&ndash;    <servlet-mapping>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <servlet-name>MyServlet</servlet-name>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <url-pattern>/user/*</url-pattern>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </servlet-mapping>&ndash;&gt;-->
+<!--    &lt;!&ndash;    路径以/user/开始，后面的路径可以任意。比如下面的url都会被匹配。例如：http://localhost:8080/appDemo/user/users.html；&ndash;&gt;-->
+<!--    &lt;!&ndash;    http://localhost:8080/appDemo/user/addUser.action；http://localhost:8080/appDemo/user/updateUser.actionl&ndash;&gt;-->
 
-    <!--DispatcherServlet是前端控制器设计模式的实现，提供Spring Web MVC的集中访问点，而且负责职责的分派，而且与Spring IoC容器无缝集成，
-    DispatcherServlet主要用作职责调度工作，本身主要用于控制流程，主要职责如下：
-    1、文件上传解析，如果请求类型是multipart将通过MultipartResolver进行文件上传解析；
-    2、通过HandlerMapping，将请求映射到处理器（返回一个HandlerExecutionChain，它包括一个处理器、多个HandlerInterceptor拦截器）；
-    3、通过HandlerAdapter支持多种类型的处理器(HandlerExecutionChain中的处理器)；
-    4、通过ViewResolver解析逻辑视图名到具体视图实现；
-    5、本地化解析；
-    6、渲染具体的视图等；
-    7、如果执行过程中遇到异常将交给HandlerExceptionResolver来解析。
-    从以上我们可以看出DispatcherServlet主要负责流程的控制（而且在流程中的每个关键点都是很容易扩展的）。-->
+<!--    &lt;!&ndash;     扩展名匹配：以“*.”开头的字符串被用于扩展名匹配&ndash;&gt;-->
+<!--    &lt;!&ndash;    <servlet-mapping>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <servlet-name>MyServlet</servlet-name>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <url-pattern>*.jsp</url-pattern>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <url-pattern>*.action</url-pattern>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </servlet-mapping>&ndash;&gt;-->
+<!--    &lt;!&ndash;    则任何扩展名为jsp或action的url请求都会匹配，比如下面的url都会被匹配&ndash;&gt;-->
+<!--    &lt;!&ndash;    　　http://localhost:8080/appDemo/user/users.jsp&ndash;&gt;-->
+<!--    &lt;!&ndash;    　　http://localhost:8080/appDemo/toHome.action&ndash;&gt;-->
 
-    <!--该servelt会在服务启动的时候立即加载，并且在加载时需要一个springMVC配置文件，默认情况下，会去应用程序文件夹的web-inf下找[servlet-name].xml文件，
-    也可以把springMVC配置文件放到程序文件夹的任何地方，用init-param描述，contextConfigLocation描述的就是配置文件所在位置，这样DispatcherServlet会去
-    加载springmvc-config.xml文件，并根据该文件信息创建一个WebApplicationContext容器对象，也成为上下文环境。这个对象继承与ApplicationContext容器，
-    他的初始化与BeanFactory、ApplicationContext有所区别，因为WebApplicationcontext需要ServletContext实例，也就是说他必须在拥有Web容器的前提下才能
-    完成启动SpringWeb应用上下文的工作。有了WebApplicationcontext，就可以使用spring的IOC和AOP等其他功能了。
-    DispatcherSerlet是前端控制器，核心功能是分发请求，分发给对应的java类，在springMVC中称为Handle
-    spring2.5之前控制器唯一的方法就是实现org.springframework.web.servlet.mvc.Controller接口，并且只能只处理单一动作的单一请求spring2.5之后控制器
-    可以支持注解的方式，并且无需实现任何接口，可以支持同时处理多个请求.-->
+<!--    &lt;!&ndash;     缺省匹配&ndash;&gt;-->
+<!--    &lt;!&ndash;    <servlet-mapping>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <servlet-name>MyServlet</servlet-name>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <url-pattern>/</url-pattern>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </servlet-mapping>&ndash;&gt;-->
+<!--    &lt;!&ndash;    则所有请求都可以匹配&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    使用时需要注意的是：&ndash;&gt;-->
+<!--    &lt;!&ndash;    路径匹配和扩展名匹配无法同时设置，　如<url-pattern>/user/*.action</url-pattern>是非法的，-->
+<!--    另外注意：<url-pattern>/aa/*/bb</url-pattern>是精确匹配，合法，这里的*不是通配的含义&ndash;&gt;-->
+<!--    &lt;!&ndash;    "/*"和"/"含义并不相同；“/*”属于路径匹配，并且可以匹配所有request，由于路径匹配的优先级仅次于精确匹配，-->
+<!--    所以“/*”会覆盖所有的扩展名匹配，很多404错误均由此引起，所以这是一种特别恶劣的匹配模式，一般只用于filter的url-pattern；-->
+<!--    “/”是servlet中特殊的匹配模式，切该模式有且仅有一个实例，优先级最低，不会覆盖其他任何url-pattern，只是会替换servlet容器-->
+<!--    的内建default servlet ，该模式同样会匹配所有request。&ndash;&gt;-->
+
+<!--    &lt;!&ndash;DispatcherServlet是前端控制器设计模式的实现，提供Spring Web MVC的集中访问点，而且负责职责的分派，而且与Spring IoC容器无缝集成，-->
+<!--    DispatcherServlet主要用作职责调度工作，本身主要用于控制流程，主要职责如下：-->
+<!--    1、文件上传解析，如果请求类型是multipart将通过MultipartResolver进行文件上传解析；-->
+<!--    2、通过HandlerMapping，将请求映射到处理器（返回一个HandlerExecutionChain，它包括一个处理器、多个HandlerInterceptor拦截器）；-->
+<!--    3、通过HandlerAdapter支持多种类型的处理器(HandlerExecutionChain中的处理器)；-->
+<!--    4、通过ViewResolver解析逻辑视图名到具体视图实现；-->
+<!--    5、本地化解析；-->
+<!--    6、渲染具体的视图等；-->
+<!--    7、如果执行过程中遇到异常将交给HandlerExceptionResolver来解析。-->
+<!--    从以上我们可以看出DispatcherServlet主要负责流程的控制（而且在流程中的每个关键点都是很容易扩展的）。&ndash;&gt;-->
+
+<!--    &lt;!&ndash;该servelt会在服务启动的时候立即加载，并且在加载时需要一个springMVC配置文件，默认情况下，会去应用程序文件夹的web-inf下找[servlet-name].xml文件，-->
+<!--    也可以把springMVC配置文件放到程序文件夹的任何地方，用init-param描述，contextConfigLocation描述的就是配置文件所在位置，这样DispatcherServlet会去-->
+<!--    加载springmvc-config.xml文件，并根据该文件信息创建一个WebApplicationContext容器对象，也成为上下文环境。这个对象继承与ApplicationContext容器，-->
+<!--    他的初始化与BeanFactory、ApplicationContext有所区别，因为WebApplicationcontext需要ServletContext实例，也就是说他必须在拥有Web容器的前提下才能-->
+<!--    完成启动SpringWeb应用上下文的工作。有了WebApplicationcontext，就可以使用spring的IOC和AOP等其他功能了。-->
+<!--    DispatcherSerlet是前端控制器，核心功能是分发请求，分发给对应的java类，在springMVC中称为Handle-->
+<!--    spring2.5之前控制器唯一的方法就是实现org.springframework.web.servlet.mvc.Controller接口，并且只能只处理单一动作的单一请求spring2.5之后控制器-->
+<!--    可以支持注解的方式，并且无需实现任何接口，可以支持同时处理多个请求.&ndash;&gt;-->
 
 
 
