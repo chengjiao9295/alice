@@ -1,0 +1,10 @@
+配置文件(https://blog.csdn.net/jinhaijing/article/details/84258761)
+1.pom.xml（配置我们需要的jar包）
+2.web.xml（启动spring容器监听器并加载spring的xml文件，加载springmvc前端控制器）
+3.springmvc的配置文件（配置IOC自动注入视图对象（controller），前端页面映射配置，静态资源配置）
+4.spring的配置文件(创建对象配置IOC自动注入业务对象（非cont），数据库配置，事物管理，和mybatis的结合配置)
+5.mybatis的配置文件(settings, 数据库别名等，当然也都可以配置在spring中)--
+    因为spring中已配置了数据源、事物管理、mapper.xml的地址，所以mybatis中可以只配置setting和数据库别名的配置；
+    当然，这些也可以直接写在spring中；
+6.config.properties配置文件
+7.log4j2.xml
