@@ -1,5 +1,8 @@
 package utils;
 
+import org.springframework.stereotype.Service;
+import service.UUIDUtilService;
+
 import java.util.Random;
 import java.util.UUID;
 
@@ -9,14 +12,15 @@ import java.util.UUID;
  * @version V1.0
  * @author
  */
-public class UUIDUtils {
+@Service
+public class UUIDUtilsServiceImpl implements UUIDUtilService {
 
     /**
      * 生成不带-的UUID
      *
      * @return UUID
      */
-    public static String getUUID() {
+    public String getUUID() {
         // 返回用UUID
         String uuidResult = "";
         // 临时用UUID
@@ -38,7 +42,7 @@ public class UUIDUtils {
      *            [生成随机数的长度]
      * @return
      */
-    public static String getCharAndNumr(int length) {
+    public String getCharAndNumr(int length) {
         String val = "";
         Random random = new Random();
         for (int i = 0; i < length; i++) {
@@ -62,7 +66,7 @@ public class UUIDUtils {
      * @param length
      * @return
      */
-    public static String getNumber(int length) {
+    public String getNumber(int length) {
         char[] chars = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
         Random random = new Random();
         StringBuffer sb = new StringBuffer();
@@ -72,15 +76,4 @@ public class UUIDUtils {
         return sb.toString();
     }
 
-    public static void main(String[] args) {
-        //方法1
-        System.out.println(UUIDUtils.getCharAndNumr(16));
-        //方法2
-        System.out.println(UUIDUtils.getUUID());
-        //方法3
-        for(int i=0;i<10;i++){
-            String uuid = UUID.randomUUID().toString().replaceAll("-", "");
-            System.out.println(uuid);
-        }
-    }
 }
