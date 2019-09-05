@@ -1,21 +1,18 @@
 package com.alice.test;
 
 import com.alice.bean.members;
-import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.TestExecutionListeners;
 import service.UUIDUtilService;
 import service.membersService;
-import sun.plugin.util.UIUtil;
 
 public class testMembers extends AbstractTestBase{
 
     @Autowired
-    private membersService service;
+    protected membersService service;
 
     @Autowired
-    private UUIDUtilService utilService;
+    protected UUIDUtilService utilService;
 
     @Test
     public void test(){
