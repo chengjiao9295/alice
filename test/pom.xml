@@ -25,7 +25,7 @@
         </dependency>
         <dependency>
             <groupId>alice</groupId>
-            <artifactId>serviceimpl</artifactId>
+            <artifactId>serviceImpl</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
-            <!-- <version>1.4</version> -->
+             <version>1.4</version>
         </dependency>
     </dependencies>
 </project>
