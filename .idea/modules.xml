@@ -10,7 +10,6 @@
       <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" />
       <module fileurl="file://$PROJECT_DIR$/serviceImpl/serviceImpl.iml" filepath="$PROJECT_DIR$/serviceImpl/serviceImpl.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../testGeneric/testGeneric.iml" filepath="$PROJECT_DIR$/../testGeneric/testGeneric.iml" />
       <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
     </modules>
   </component>

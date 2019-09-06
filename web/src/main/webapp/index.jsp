@@ -1,4 +1,4 @@
-<%@ page import="impl.helloworld" %>
+<%@ page import="com.alice.service.helloworld" %>
 >
 <%--
   Created by IntelliJ IDEA.

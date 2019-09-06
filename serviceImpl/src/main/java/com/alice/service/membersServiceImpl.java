@@ -1,11 +1,12 @@
-package impl;
+package com.alice.service;
 
 import com.alice.bean.members;
 import com.alice.dao.membersMapper;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import service.membersService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class membersServiceImpl implements membersService {
 
     @Autowired
@@ -19,5 +20,9 @@ public class membersServiceImpl implements membersService {
        members info = mapper.selectByPrimaryKey(param.getId());
 
        return info;
+    }
+    
+    public String hello() {
+    	return "helloworld";
     }
 }

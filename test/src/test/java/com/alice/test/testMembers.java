@@ -3,8 +3,8 @@ package com.alice.test;
 import com.alice.bean.members;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import service.UUIDUtilService;
-import service.membersService;
+import com.alice.service.UUIDUtilService;
+import com.alice.service.membersService;
 
 public class testMembers extends AbstractTestBase{
 
@@ -24,8 +24,8 @@ public class testMembers extends AbstractTestBase{
         param.setJob("worker");
         param.setHobbies("basketball");
 
-        members info = service.selectMembers(param);
-        System.out.println(info.getId());
+        String info = service.hello();
+        System.out.println(info);
     }
 
 }

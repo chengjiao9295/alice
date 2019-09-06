@@ -10,7 +10,6 @@
         <module name="test" />
         <module name="common" />
         <module name="serviceImpl" />
-        <module name="testGeneric" />
         <module name="data" />
         <module name="service" />
         <module name="controller" />

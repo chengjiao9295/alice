@@ -1,10 +1,8 @@
-package utils;
+package com.alice.service;
 
 import org.springframework.stereotype.Service;
-import service.UUIDUtilService;
 
 import java.util.Random;
-import java.util.UUID;
 
 /**
  * 32位UUID生成器

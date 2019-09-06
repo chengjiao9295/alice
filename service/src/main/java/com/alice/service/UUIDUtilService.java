@@ -1,4 +1,4 @@
-package service;
+package com.alice.service;
 
 public interface UUIDUtilService {
     String getUUID();
