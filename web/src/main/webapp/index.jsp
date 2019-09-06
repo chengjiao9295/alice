@@ -12,10 +12,20 @@
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
 </head>
 <body>
-     <div class="form">
-         <input  class="name" name="name"/>
-        <input type="submit" value="提交" id="btn" class="btn"/>
-     </div>
+    <div id="stylized" class="myForm">
+        <form id="form1" name="form1" method="post" action="">
+            <h1>登录</h1>
+            <p>请准确填写个人信息......</p>
+            <label>Name <span class="small">姓名</span></label>
+            <input type="text" name="textField" id="textField"/>
+            <label>Email <span class="small">电子邮箱</span></label>
+            <input type="text" name="textField" id="textFiled"/>
+            <label>Password <span class="small">密码</span></label>
+            <input type="text" name="textField" id="textField"/>
+            <button class="submit">登录</button>
+            <div class="spacer"></div>
+        </form>
+    </div>
 <script>
 
     var ajax = function () {
@@ -23,7 +33,7 @@
             url:'members/select',
             type:'GET',
             dataType:"JSON",
-            data:{'name':'xiaoming'},
+            data:{'name':'da'},
             contentType:'application/json',
             success:function(resp) {
                 if(resp){
@@ -32,7 +42,7 @@
             }
         });
     };
-    $('input.btn').click(function (ev) {
+    $('button.submit').click(function (ev) {
         ajax();
     });
 </script>
