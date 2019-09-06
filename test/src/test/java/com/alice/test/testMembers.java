@@ -26,6 +26,8 @@ public class testMembers extends AbstractTestBase{
 
         String info = service.hello();
         System.out.println(info);
+        members members = service.selectMembers(param);
+        System.out.println(members.getId());
     }
 
 }
