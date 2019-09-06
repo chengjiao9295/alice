@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>登录页面</title>
-<!--    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>-->
-    <link href="../css/login.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../lib/jquery.js"></script>
+    <link type="text/css" href="../css/login.css" rel="stylesheet"  />
 </head>
 <body>
 <div id="stylized" class="myForm">
@@ -17,9 +17,27 @@
         <input type="text" name="textField" id="textFiled"/>
         <label>Password <span class="small">密码</span></label>
         <input type="text" name="textField" id="textField"/>
-        <button type="submit">登录</button>
+        <button id="submit">登录</button>
         <div class="spacer"></div>
     </form>
 </div>
+<script>
+   var submit = document.getElementById('submit');
+   submit.click(function(ev){
+        submitAction();
+   });
+    var submitAction = function(){
+        $.ajax({
+            url:localhot:8080/web/members/select,
+            type:get,
+            data:{name :'test name', id : '1234567890'},
+            success:function(data){
+                if(data){
+                    console.log(data);
+                }
+            }
+        });
+    }
+</script>
 </body>
 </html>

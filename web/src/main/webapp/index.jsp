@@ -1,19 +1,40 @@
-<%@ page import="com.alice.service.helloworld" %>
->
-<%--
-  Created by IntelliJ IDEA.
-  User: Chengjiao
-  Date: 2019/8/11
-  Time: 20:27
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% String Path = request.getContextPath() + "/"; %>
+<%--<jsp:forward page="/FormServlet"/>--%>
 <html>
 <head>
-    <title>hello</title>
+    <title>Form表单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- 引入 Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
 </head>
 <body>
-<%helloworld hello = new helloworld(); %>
-<%=hello.hello("hello world")%>
+     <div class="form">
+         <input  class="name" name="name"/>
+        <input type="submit" value="提交" id="btn" class="btn"/>
+     </div>
+<script>
+
+    var ajax = function () {
+        $.ajax({
+            url:'members/select',
+            type:'GET',
+            dataType:"JSON",
+            data:{'name':'xiaoming'},
+            contentType:'application/json',
+            success:function(resp) {
+                if(resp){
+                    console.log(resp);
+                }
+            }
+        });
+    };
+    $('input.btn').click(function (ev) {
+        ajax();
+    });
+</script>
 </body>
 </html>
