@@ -117,8 +117,26 @@
             }
         });
     };
+
+    var user = function(){
+         $.ajax({
+                  url:'userInfo/select',
+                  type:'GET',
+                  dataType:"JSON",
+                  contentType:'application/json',
+                  success:function(resp) {
+                      if(resp){
+                          console.log(resp);
+                      }
+                  },
+                  error:function(){
+                     console.log("fail");
+                  }
+              });
+    }
     $('button.submit').click(function (ev) {
-        ajax();
+        user();
+
     });
 </script>
 </body>

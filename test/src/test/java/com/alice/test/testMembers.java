@@ -1,6 +1,8 @@
 package com.alice.test;
 
+import com.alice.bean.UserInfo;
 import com.alice.bean.members;
+import com.alice.service.UserInfoService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.alice.service.UUIDUtilService;
@@ -13,6 +15,9 @@ public class testMembers extends AbstractTestBase{
 
     @Autowired
     protected UUIDUtilService utilService;
+
+    @Autowired
+    protected UserInfoService userInfoService;
 
     @Test
     public void test(){
@@ -28,6 +33,9 @@ public class testMembers extends AbstractTestBase{
         System.out.println(info);
         members members = service.selectMembers(param);
         System.out.println(members.getId());
+        UserInfo userInfo= userInfoService.selectRoot();
+        System.out.println(userInfo.getName());
+
     }
 
 }
