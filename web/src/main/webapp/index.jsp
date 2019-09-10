@@ -92,11 +92,11 @@
             <h1>登录</h1>
             <p>请准确填写个人信息......</p>
             <label>Name <span class="small">姓名</span></label>
-            <input type="text" name="textField" id="textField"/>
+            <input type="text" databind="name" class="name"/>
             <label>Email <span class="small">电子邮箱</span></label>
-            <input type="text" name="textField" id="textFiled"/>
+            <input type="text" databind="email" class="email"/>
             <label>Password <span class="small">密码</span></label>
-            <input type="text" name="textField" id="textField"/>
+            <input type="text" databind="pwd" class="pwd"/>
             <button class="submit">登录</button>
             <div class="spacer"></div>
         </form>
@@ -105,7 +105,7 @@
 
     var ajax = function () {
         $.ajax({
-            url:'members/select',
+            url:'members/select/testPathVariable',
             type:'GET',
             dataType:"JSON",
             data:{'name':'da'},
