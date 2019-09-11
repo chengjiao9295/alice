@@ -1,6 +1,8 @@
 package com.alice.bean;
 
-public class members {
+import java.io.Serializable;
+
+public class members implements Serializable {
     private String id;
 
     private String name;

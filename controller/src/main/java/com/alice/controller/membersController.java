@@ -1,5 +1,7 @@
 package com.alice.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.alice.bean.members;
 import com.alice.service.membersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +13,12 @@ public class membersController{
     @Autowired
     protected membersService membersService;
     @RequestMapping(value = "/select/{testPathVariable}")
-    public String select(@PathVariable("testPathVariable") String testPathVariable, @RequestParam(value = "name") String username){
+    public JSONObject select(@PathVariable("testPathVariable") String testPathVariable, @RequestParam(value = "name") String username){
 
-        System.out.println(membersService.hello());
-        return username;
+        String result = membersService.hello();
+        JSONObject A= new JSONObject();
+        A.put("a","b");
+        return  A;
     }
 
 

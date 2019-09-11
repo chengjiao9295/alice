@@ -1,6 +1,8 @@
 package com.alice.bean;
 
-public class UserInfo {
+import java.io.Serializable;
+
+public class UserInfo implements Serializable {
     private String name;
 
     private String email;

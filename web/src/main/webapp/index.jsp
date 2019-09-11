@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% String Path = request.getContextPath() + "/"; %>
-<%--<jsp:forward page="/FormServlet"/>--%>
+<jsp:forward page="/front/html/login.html"/>
 <html>
 <head>
     <title>Form表单</title>
@@ -88,7 +88,7 @@
 </head>
 <body>
     <div id="stylized" class="myForm">
-        <form id="form1" name="form1" method="post" action="">
+
             <h1>登录</h1>
             <p>请准确填写个人信息......</p>
             <label>Name <span class="small">姓名</span></label>
@@ -99,7 +99,7 @@
             <input type="text" databind="pwd" class="pwd"/>
             <button class="submit">登录</button>
             <div class="spacer"></div>
-        </form>
+
     </div>
 <script>
 
@@ -111,6 +111,7 @@
             data:{'name':'da'},
             contentType:'application/json',
             success:function(resp) {
+             alert(resp);
                 if(resp){
                     console.log(resp);
                 }
@@ -122,8 +123,6 @@
          $.ajax({
                   url:'userInfo/select',
                   type:'GET',
-                  dataType:"JSON",
-                  contentType:'application/json',
                   success:function(resp) {
                       if(resp){
                           console.log(resp);
@@ -135,7 +134,18 @@
               });
     }
     $('button.submit').click(function (ev) {
-        user();
+        $.ajax({
+                   url:'members/select/testPathVariable',
+                   type:'GET',
+                   dataType:"JSON",
+                   data:{'name':'da'},
+                   success:function(data) {
+
+                      console.log(data);
+                       alert(data);
+
+                   }
+               });
 
     });
 </script>
