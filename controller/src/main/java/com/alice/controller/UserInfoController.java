@@ -18,7 +18,6 @@ public class UserInfoController {
     @RequestMapping(value="/select")
     public UserInfo selectUser(){
         UserInfo result = userInfoService.selectRoot();
-
         return  result;
     }
 
