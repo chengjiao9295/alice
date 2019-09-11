@@ -20,12 +20,12 @@
                      url:'userInfo/select',
                      type:'GET',
                      success:function(resp) {
-                     console.log(resp);
-                     alert(resp);
-                         if(resp){
-                             console.log(resp);
-                         }
-                     },
+                         console.log(resp);
+                         alert(resp);
+                             if(resp){
+                                 console.log(resp);
+                             }
+                         },
                      error:function(){
                         console.log("fail");
                      }
