@@ -11,7 +11,7 @@ public class WelcomeController {
     @RequestMapping("/index")
     public String index(){
         System.out.println("qianduan");
-        return "front/html/login.html";
+        return "login";
     }
 
 }

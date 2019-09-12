@@ -6,15 +6,22 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
     @Autowired
     private SqlSessionTemplate sqlSession;
 
     @Override
-    public UserInfo selectRoot(){
+    public List<UserInfo> select(UserInfo userInfo){
         UserInfoMapper mapper = this.sqlSession.getMapper(UserInfoMapper.class);
-        return mapper.selectByPrimaryKey("root");
+        UserInfo entity = new UserInfo();
+        entity.setName(userInfo.getName());
+        entity.setPwd(userInfo.getPwd());
+        entity.setEmail(userInfo.getEmail());
+
+        return mapper.select(entity);
     }
 
 }

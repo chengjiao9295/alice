@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.alice.service.UUIDUtilService;
 import com.alice.service.membersService;
 
+import java.util.List;
+
 public class testMembers extends AbstractTestBase{
 
     @Autowired
@@ -33,8 +35,12 @@ public class testMembers extends AbstractTestBase{
         System.out.println(info);
         members members = service.selectMembers(param);
         System.out.println(members.getId());
-        UserInfo userInfo= userInfoService.selectRoot();
-        System.out.println(userInfo.getName());
+        UserInfo userInfo = new UserInfo();
+        userInfo.setName("root");
+        userInfo.setEmail("root@qq.com");
+        userInfo.setPwd("123456");
+        List<UserInfo> result= userInfoService.select(userInfo);
+        System.out.println(result);
 
     }
 

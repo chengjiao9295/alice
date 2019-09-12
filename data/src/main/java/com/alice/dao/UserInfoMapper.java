@@ -2,6 +2,8 @@ package com.alice.dao;
 
 import com.alice.bean.UserInfo;
 
+import java.util.List;
+
 public interface UserInfoMapper {
     int deleteByPrimaryKey(String name);
 
@@ -14,4 +16,6 @@ public interface UserInfoMapper {
     int updateByPrimaryKeySelective(UserInfo record);
 
     int updateByPrimaryKey(UserInfo record);
+
+    List<UserInfo> select(UserInfo userInfo);
 }

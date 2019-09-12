@@ -15,22 +15,27 @@
 //
 //        });
 
-      var user = function(){
-             $.ajax({
-                 url:'userInfo/select',
-                 type:'GET',
-                 success:function(resp) {
-                     console.log(resp);
-                     render(resp);
-                     },
-                 error:function(){
-                    console.log("fail");
-                    }
-             });
+      var user = function(data){
+
       };
 
       $(document.getElementsByTagName("button")).click(function (ev){
-           user();
+           var name = $(document.getElementsByClassName("name")).val();
+           var email = $(document.getElementsByClassName("email")).val();
+           var pwd = $(document.getElementsByClassName("pwd")).val();
+           $.ajax({
+                url:'select',
+                type:'GET',
+                data:{'name': name, 'email': email, 'pwd': pwd},
+                success:function(resp) {
+                    console.log(resp);
+                    location.href=resp;
+
+                },
+                error:function(){
+                    console.log("fail");
+                }
+           });
       });
 
       var render = function(resp){
